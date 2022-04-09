@@ -143,3 +143,7 @@ PRACTICAL 9: Perform SQL Injection ataack
 10. write a'or"=' in textbox and click on submit
 11. write 1=1 in textbox and click on submit
 12. write 1* in textbox and click on submit
+
+
+
+https://drive.google.com/drive/folders/1GtoibqTCuqkcmXJKE85RxYSI8cxVwhSA
